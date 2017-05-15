@@ -1,0 +1,8 @@
+# Intellij
+.idea
+
+# Node
+node_modules
+
+# Library
+lib
