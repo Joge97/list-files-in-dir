@@ -1,12 +1,26 @@
-# node-typescript-boilerplate
+# list-files-in-dir
 
-Simple typescript boilerplate project for node.
+Lists recursively files in the specified directory.
 
 ## Installation
 
 ```sh
-npm install node-typescript-boilerplate --save
+npm install list-files-in-dir --save
 ```
+
+## Usage
+
+```
+import {listFiles} from 'list-files-in-dir';
+
+// As second parameter you can optionally pass the extension to filter the files
+listFiles('example/path')
+    .then(files => {
+        // do what ever you want with the file paths
+    });
+```
+
+Additionally `listFilesSync` is available.
 
 ## Tests
 
