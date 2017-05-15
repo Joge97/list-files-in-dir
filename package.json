@@ -1,7 +1,7 @@
 {
-    "name": "node-typescript-boilerplate",
+    "name": "list-files-in-dir",
     "version": "0.0.0",
-    "description": "Simple typescript boilerplate project for node.",
+    "description": "Lists recursively files in the specified directory.",
     "main": "./lib/index.js",
     "types": "./lib/index.d.ts",
     "scripts": {
@@ -12,19 +12,18 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+ssh://git@github.com/Joge97/node-typescript-boilerplate.git"
+        "url": "git+ssh://git@github.com:Joge97/list-files-in-dir.git"
     },
     "keywords": [
-        "node",
-        "typescript",
-        "boilerplate"
+        "list",
+        "files"
     ],
     "author": "Joge <joge@application-studios.com> (https://application-studios.com)",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/Joge97/node-typescript-boilerplate/issues"
+        "url": "https://github.com/Joge97/list-files-in-dir/issues"
     },
-    "homepage": "https://github.com/Joge97/node-typescript-boilerplate#readme",
+    "homepage": "https://github.com/Joge97/list-files-in-dir#readme",
     "devDependencies": {
         "rimraf": "^2.6.1",
         "tslint": "^5.2.0",
