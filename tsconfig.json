@@ -2,6 +2,12 @@
     "compileOnSave": false,
     "compilerOptions": {
         "declaration": true,
+        "lib": [
+            "DOM",
+            "ES5",
+            "ScriptHost",
+            "ES2015"
+        ],
         "module": "commonjs",
         "moduleResolution": "node",
         "outDir": "lib",
