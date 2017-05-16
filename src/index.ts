@@ -2,8 +2,8 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 
-export function listFiles(directory: string, extension?: string): Promise<string[]> {
-    extension = extension.startsWith('.') ? extension : `.${extension}`;
+export function listFiles(directory: string, extension?: string | RegExp): Promise<string[]> {
+    if(typeof extension === 'string' && !extension.startsWith('.')) extension = `.${extension}`;
     return new Promise((resolve, reject) => {
         fs.readdir(directory, (err, currentFiles) => {
             if(err) return reject(err);
@@ -14,7 +14,9 @@ export function listFiles(directory: string, extension?: string): Promise<string
                         if(statErr) return statReject(statErr);
                         if(stat.isDirectory()) {
                             statResolve(listFiles(file, extension));
-                        } else if(extension && file.endsWith(extension)) {
+                        } else if(extension &&
+                            ((typeof extension === 'string' && file.endsWith(extension)) ||
+                            (extension instanceof RegExp && extension.test(file)))) {
                             statResolve(file);
                         } else {
                             statResolve();
@@ -28,14 +30,16 @@ export function listFiles(directory: string, extension?: string): Promise<string
         .then(files => Array.prototype.concat.apply([], files).filter(file => !!file));
 }
 
-export function listFilesSync(directory: string, extension?: string, files: string[] = []): string[] {
-    extension = extension.startsWith('.') ? extension : `.${extension}`;
+export function listFilesSync(directory: string, extension?: string | RegExp, files: string[] = []): string[] {
+    if(typeof extension === 'string' && !extension.startsWith('.')) extension = `.${extension}`;
     for(let file of fs.readdirSync(directory)) {
         file = path.resolve(directory, file);
 
         if(fs.statSync(file).isDirectory()) {
             files = listFilesSync(file, extension, files);
-        } else if(extension && file.endsWith(extension)) {
+        } else if(extension &&
+            ((typeof extension === 'string' && file.endsWith(extension)) ||
+            (extension instanceof RegExp && extension.test(file)))) {
             files.push(file);
         }
     }
