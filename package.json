@@ -1,6 +1,6 @@
 {
     "name": "list-files-in-dir",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "Lists recursively files in the specified directory.",
     "main": "./lib/index.js",
     "types": "./lib/index.d.ts",
