@@ -18,7 +18,7 @@ export function listFiles(directory: string, extension?: string | RegExp): Promi
                             ((typeof extension === 'string' && file.endsWith(extension)) ||
                             (extension instanceof RegExp && extension.test(file)))) {
                             statResolve(file);
-                        } else {
+                        } else if(!extension) {
                             statResolve();
                         }
                     });
@@ -26,8 +26,7 @@ export function listFiles(directory: string, extension?: string | RegExp): Promi
             }));
         });
     })
-        .then(promises => Promise.all(Array.prototype.concat.apply([], promises)))
-        .then(files => Array.prototype.concat.apply([], files).filter(file => !!file));
+        .then(promises => Promise.all(Array.prototype.concat.apply([], promises)));
 }
 
 export function listFilesSync(directory: string, extension?: string | RegExp, files: string[] = []): string[] {
@@ -40,6 +39,8 @@ export function listFilesSync(directory: string, extension?: string | RegExp, fi
         } else if(extension &&
             ((typeof extension === 'string' && file.endsWith(extension)) ||
             (extension instanceof RegExp && extension.test(file)))) {
+            files.push(file);
+        } else if(!extension) {
             files.push(file);
         }
     }
