@@ -26,7 +26,8 @@ export function listFiles(directory: string, extension?: string | RegExp): Promi
             }));
         });
     })
-        .then(promises => Promise.all(Array.prototype.concat.apply([], promises)));
+        .then(promises => Promise.all(Array.prototype.concat.apply([], promises)))
+        .then(files => Array.prototype.concat.apply([], files));
 }
 
 export function listFilesSync(directory: string, extension?: string | RegExp, files: string[] = []): string[] {
