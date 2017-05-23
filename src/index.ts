@@ -49,11 +49,7 @@ export function listFilesSync(directory: string, extension?: string | RegExp, fi
 
         if(statSync(file).isDirectory()) {
             files = listFilesSync(file, extension, files);
-        } else if(extension &&
-            ((typeof extension === 'string' && file.endsWith(extension)) ||
-            (extension instanceof RegExp && extension.test(file)))) {
-            files.push(file);
-        } else if(!extension) {
+        } else if(!extension || (extension && matchesExtension(file, extension))) {
             files.push(file);
         }
     }
