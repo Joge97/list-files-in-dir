@@ -1,5 +1,22 @@
 {
   "extends": [
-    "config:base"
+    "config:base",
+    "config:js-lib",
+    ":semanticCommitScope(dependencies)"
+  ],
+  "updateLockFiles": true,
+  "baseBranches": [
+    "develop"
+  ],
+  "packageRules": [
+    {
+      "packageNames": [
+        "@types/node"
+      ],
+      "major": {
+        "enabled": true
+      }
+    }
   ]
 }
+
