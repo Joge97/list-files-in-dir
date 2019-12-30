@@ -2,9 +2,9 @@
 # yarn lockfile v1
 
 
-"@types/node@^10.0.0":
-  version "10.9.4"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-10.9.4.tgz#0f4cb2dc7c1de6096055357f70179043c33e9897"
+"@types/node@^13.0.0":
+  version "13.1.1"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-13.1.1.tgz#6d11a8c2d58405b3db9388ab740106cbfa64c3c9"
 
 ansi-regex@^2.0.0:
   version "2.1.1"
