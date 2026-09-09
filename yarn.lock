@@ -2,9 +2,12 @@
 # yarn lockfile v1
 
 
-"@types/node@^10.0.0":
-  version "10.9.4"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-10.9.4.tgz#0f4cb2dc7c1de6096055357f70179043c33e9897"
+"@types/node@^22.0.0":
+  version "22.20.2"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-22.20.2.tgz#daae777b5f5965a587f50cc80d5364c2ddf27e36"
+  integrity sha512-xlvWf4Vs9n1PEVYwP1n4vvG07M6y8WgvJ2t0vbrWTmijsIHp1cS+uJ2kMIRdY3nHZK0nCYKrPeD171+SzF4/zw==
+  dependencies:
+    undici-types "~6.21.0"
 
 ansi-regex@^2.0.0:
   version "2.1.1"
@@ -245,6 +248,11 @@ tsutils@^2.27.2:
 typescript@3.2.4:
   version "3.2.4"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.2.4.tgz#c585cb952912263d915b462726ce244ba510ef3d"
+
+undici-types@~6.21.0:
+  version "6.21.0"
+  resolved "https://registry.yarnpkg.com/undici-types/-/undici-types-6.21.0.tgz#691d00af3909be93a7faa13be61b3a5b50ef12cb"
+  integrity sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ==
 
 wrappy@1:
   version "1.0.2"
